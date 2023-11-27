@@ -1,0 +1,98 @@
+What happens when you run a Js program?
+
+// Sample JS Code
+
+var n=2
+function square (num){
+    var ans = num*num;
+    return ans;
+}
+
+var square2 = square(n);
+var square4 = square(4);
+
+num - parameter
+n - argument
+
+*************************************
+
+When we run this JS program the "execution context" is created in two phases:
+1) Creation phase / Memory creation phase:
+    JS allocates memory to all the variables and functions.
+
+What does it store?
+For all the variables it stores the value as undefined. And for the functions it literally stores all the code of the function. 
+Ex:
+n: undefined
+square: {whole code}
+square2: undefined
+square4: undefined
+
+2) Code execution phase:
+The JS program once again runs line by line throughout the program. When it encounters a variable it replaces the "undefined" with the actual value of the variable.
+
+Ex: 
+n:2
+
+Whenever a function is invoked/executed again new "execution context" is created.Again it has memory component and the code component.
+
+Phase 1:
+Now memory creation phase is repeated.
+We will be allocation memory to num and ans - the variables.
+
+Ex:
+num - undefined
+ans - undefined
+
+
+Phase 2:
+Code execution phase
+In this phase the variable "undefined" are replaced by the actual values. 
+
+num  replaced by 2
+ans is num*num = 4. So it is replaced by 4
+
+The "return" keyword says that return the control of the program to the place where the function was invoked.
+
+Ex:
+return ans means it returns the value 4 is replaced with square 2
+
+
+*********** Once after the "execution context" of a particular function is done it is deleted.
+
+********  My turn
+
+The control goes to the code execution phase of square4 (function is invoked)
+Here as the function is invoked another "execution context" is created.
+It again contains Memory phase and code execution phase.
+
+Memory phase:
+num: undefined
+ans: undefined
+
+Now it goes to code execution phase.
+num: 4
+ans: num*num = 4*4 = 16
+
+"return ans" means it returns 16 to square4.
+As the "execution context" is completed it is destroyed.
+
+Once the complete program execution is completed the complete global "execution context" also gets deleted.
+
+Assume that there is a function inside a function.Then there must be multiple "execution context" inside the global execution context.
+This is actually hard to manage. So JS Engine uses "call stack"
+
+Call stack:
+
+It is like a stack and at the bottom we always have the "Global execution context"
+Whenever a function is invoked this "execution context" is pushed into the stack.
+Once the function is completed it pops out of the stack......
+
+***** Call stack maintains the "order of execution" of "execution contexts"..
+
+Call stack is also known by many fancy names.
+
+
+
+
+

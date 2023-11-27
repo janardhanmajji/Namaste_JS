@@ -1,0 +1,63 @@
+
+Sample code 1:
+
+var x=1
+
+function getName(){
+    console.log("Namaste JS")
+}
+
+getName()
+console.log(x)
+
+Output:
+Namaste JS
+1
+
+Sample code 2:
+
+getName()
+console.log(x)
+
+var x=1
+
+function getName(){
+    console.log("Namaste JS")
+}
+
+Working of the code:
+
+It will create a "global execution context" where it has 2 phases. 
+1) Memory creation phase:
+
+x:undefined
+getName: {full code}
+
+2) Code execution phase:
+
+getName is invoked. So another "execution context" is created.
+Memory phase: Nothing
+Execution phase: print "Namaste JS"
+
+"execution context" is deleted.
+
+console.log(x) -> x is undefined
+
+Output:
+
+Namaste JS
+undefined
+
+"global execution phase" is deleted.............
+
+"Hoisting is a concept in JS where we can access the variables and functions even before we initialize them"
+
+Not defined and undefined both are different.
+If a variable x is present but it is accessed before even it is initialized then x is undefined because there is a memory for it.
+
+If variable x is not present but accessed any where in the code then it is not defined. (error)
+
+**** When we use an arrow function instead of a function it behaves like a variable.
+
+**** Only incase of proper function syntax it behaves as a function.
+

@@ -1,0 +1,116 @@
+//
+
+function a()
+{
+    console.log(b);
+}
+
+var b=10;
+a();
+
+Execution context:
+
+1) Memory allocation phase:
+
+a: {function}
+b: undefined
+
+2) Code Execution phase
+
+b:10
+
+function call so again Execution context
+
+1a) Memory: none
+2a) Code Execution phase: 
+log 10 => print 10
+
+delete Execution context and global Execution context
+
+
+Scope: Where we can access a specific variable or a function inside the code.
+Scope is directly dependent on the lexical environment..
+
+//
+
+function a(){
+    var b=10;
+    c();
+    function c()
+    {
+
+    }
+}
+
+a();
+console.log(b);
+
+Execution context:
+
+1) Memory allocation phase
+
+a: {function}
+
+2) Code Execution
+
+1a) Memory allocation:
+b: undefined
+c: {function}
+
+1b) Code Execution
+b:10
+
+2a) Memory allocation:
+nothing
+
+2b) code Execution:
+nothing
+
+delete 2a and 2b and go to 1b
+
+then also delete 1a and 1b
+
+continution of 2)
+console.log(b) but there is no b. so it is "not defined" and throws an error.
+
+*********************
+
+Lexical means hierarchy or a sequence
+Here c() is lexically inside a and a() is lexically inside global
+
+Here lexical environment is the lexical memory along with the lexical environment of the parent...
+In the memory phase along with the variables and functions there is also a reference to the lexical environment to the parent.
+
+c lexical environment points to a()
+a lexical environment points to "global"
+global points to "null" because it has no parent...
+
+
+How does the lexical environment work?
+Assume that we did console.log(b) in c.
+
+function a(){
+    var b=10;
+    c();
+    function c()
+    {
+        console.log(b)
+    }
+}
+
+a();
+console.log(b);
+
+1) It first checks in the lexical environment of its own. If it is not present then goes to the lexical environment of the parent.
+
+b is not present in lexical environment of c.
+so it goes to the lexical environment of a and found b=10. Hence found...
+
+Scope chain:
+The process of chaining according to lexical environments according to levels is called scope chain.
+
+-> Lexical environment is created whenever an "Execution context" is created.
+-> It is the local memory + "lexical environment of lexical parent"
+-> The whole chain of lexical environment is called scope chain
+-> Scope chain helps to find whether a variable/function is present in the scope or not.
+

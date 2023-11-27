@@ -1,0 +1,27 @@
+"Everything in JS happens inside an execution context"
+
+
+Execution context is like a big box and it has two components:
+
+1) Memory component:
+This is the place where all the variables and functions store as a key-value pairs.
+
+Ex:
+a:1
+function1 : {}
+
+This Memory component is also known as variable Environment.
+
+2) Code Component:
+This is the place where code is executed one line at a time.
+
+This code component is also known as thread of execution.
+
+***** JavaScript is a synchronous, single-threaded language
+
+Single Threaded - Execute single line at a time
+synchrnonus - Executes in a specific order, it goes to the next line only after the present line is executed
+
+
+
+

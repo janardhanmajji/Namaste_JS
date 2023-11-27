@@ -1,0 +1,24 @@
+The shortest program in Java Script is an empty file. Wondering why? Look below......
+
+Even though the file is empty the JS engine will still do its work.
+The JS engine creates "Global exectuion context" and sets up memory space.
+The JS Engine also creates "Window" 
+
+What is window?
+Window is like an object with lot of functions and variables.
+We can access these functions and variables anywhere in the program.
+Window is a global object which is created along with the "global exexution context"
+
+In case of browsers the global object created is called "window"
+JS is not just run on browser but it can run on servers and many other places.
+In browser the global object is "window" and in node it is something else.
+
+What is this?
+At this global level/Global exectuion context the "this" is equal to "window"
+
+
+What is global space?
+Any code we write in a JS program which is not inside a function is called global space.
+
+Whenever we create any variables or functions in the global space then the variables and functions get attached to the global object that is "window".
+

@@ -1,0 +1,13 @@
+Undefined is a keyword in Java Script which is used for the variables for which memory is allocated but we donot have the value or if we log the variable even before we initialize the variable.
+
+Not defined means the variable is not allocated any memory....
+
+*** JavaScript is a loosely-typed language. This is flexible. Also known as weakly-typed language.
+If we create a variable we can put Strings, Numbers and literally anything in it.
+
+Note: 
+
+Never write a=undefined because undefined is like a place-holder which states that it is not assigned any value.
+It is not a good practise. 
+
+
